@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
@@ -14,11 +13,15 @@ function App() {
 
   return (
     <>
+    <Header />
     <Home />
     <Login />
     <Signup />
     <Admin />
-    
+    <About />
+    <Create />
+    <Footer />
+
     </>
   )
 }
