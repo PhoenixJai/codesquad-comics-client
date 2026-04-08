@@ -1,7 +1,11 @@
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 function Create() {
   return (
     <>
         <div>Create</div>
+        <Header />
         
         <main>
               
@@ -20,8 +24,8 @@ function Create() {
         <br />
         <br />
         <label htmlFor="publisher">Publisher: </label> 
-        <select id="publisher" name="publisher">
-          <option value="" disabled selected>Select</option>
+        <select id="publisher" name="publisher" defaultValue="">
+          <option value="" disabled>Select</option>
           <option value="option1">BOOM! Box</option>
           <option value="option2">DC Comics</option>
           <option value="option3">Harry N. Abrams</option>
@@ -64,39 +68,8 @@ function Create() {
       </form>
       <br />
   </div>
-
-
-
-
-  <footer className="footer">
-    <section className="visit">
-      <h2>VISIT US</h2>
-
-      <p>CodeSquad Comics<br />123 Dorchester Avenue<br /> Boston, MA 02124</p>
-    </section>
-
-    <section className="footerLinks">
-      <h2>LINKS</h2>
-        <a href="index.html">HOME</a>  <br />
-        <a href="about.html">ABOUT</a> <br />
-        <a href="login.html">LOGIN</a> <br />
-    </section>
-
-    <section className="followUS">
-      <h2>FOLLOW US</h2>
-      <a href="#">Facebook</a><br />
-      <a href="#">Instagram</a><br />
-      <a href="#">Twitter</a><br />
-    </section>
-
-
-
-  <section className="productOF">
-      <h2>A PRODUCT OF</h2>
-      <a target="_blank" rel="noopener noreferrer" href="http://codesquad.org/"><img src="public/images/CodeSquad-logo-b.png" alt="CodeSquad Logo"/></a>
-    </section>
-  </footer>
         </main>
+        <Footer />
     </>
 
   )
