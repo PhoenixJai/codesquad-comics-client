@@ -1,7 +1,6 @@
-import Header from './components/Header'
-import Footer from './components/Footer'
-
-function Login() {
+import Header from './shared/Header'
+import Footer from './shared/Footer'
+function Login({ user, setUser }) {
   return (
     <>
     <Header />

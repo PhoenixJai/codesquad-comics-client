@@ -1,25 +1,28 @@
 import { useState } from 'react'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './shared/Header'
+import Footer from './shared/Footer'
 import Home from './components/Home'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Admin from './components/Admin'
+
+// import Login from './components/Login'
+// import Signup from './components/Signup'
+// import Admin from './components/Admin'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+function App() {
+  const [count, setCount] = useState(0);
+const [user, setUser] = useState(localStorage.getItem("user") || {});
   return (
     <>
-    <Header />
+    <Header user={user} setUser={setUser}/>
     <Home />
-    <Login />
-    <Signup />
+    {/* <Login  user={user} setUser={setUser}/>
+    <Signup user={user} setUser={setUser}/>
     <Admin />
     <About />
-    <Create />
+    <Create /> */}
     <Footer />
 
     </>
