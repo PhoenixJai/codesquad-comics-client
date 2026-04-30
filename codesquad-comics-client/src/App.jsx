@@ -9,14 +9,15 @@ import Admin from './components/Admin'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState(localStorage.getItem("user") || {});
+  const [count, setCount] = useState(0);
 
   return (
     <>
-    <Header />
+    <Header user={user} setUser={setUser}/>
     <Home />
-    <Login />
-    <Signup />
+    <Login user={user} setUser={setUser}/>
+    <Signup user={user} setUser={setUser}/>
     <Admin />
     <About />
     <Create />

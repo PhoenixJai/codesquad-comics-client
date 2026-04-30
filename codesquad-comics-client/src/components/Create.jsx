@@ -2,24 +2,35 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 function Create() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("yay handleSubmit ran!");
+    console.log(e.target.title.value);
+    console.log(e.target.title.value);
+    console.log(e.target.title.value);
+    console.log(e.target.title.value);
+    console.log(e.target.title.value);
+  }
   return (
     <>
         <div>Create</div>
         <Header />
-        
+   
+    
         <main>
               
 
   <div className="create-page">
     <h1>CREATE NEW COMIC</h1>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label> 
-        <input type="text" id="title" name="title" placeholder="Title"/>
+        <input type="text" id="title" name="title" placeholder="Title" required/>
     <br />
         <br />
         <label htmlFor="author">Author: </label> 
-        <input type="text" id="author" name="author" placeholder="Author"/>
+        <input type="text" id="author" name="author" placeholder="Author" required/>
 
         <br />
         <br />
@@ -41,25 +52,25 @@ function Create() {
         <br />
         <br />
         <label htmlFor="genre">Genre: </label> 
-        <input type="text" id="genre" name="genre" placeholder="Genre"/>
+        <input type="text" id="genre" name="genre" placeholder="Genre" required/>
 
         <br />
         <br />
 
         <label htmlFor="numberOfPages">Number of pages: </label> 
-        <input type="text" id="numberOfPages" name="numberOfPages" placeholder="Number of pages"/>
+        <input type="text" id="numberOfPages" name="numberOfPages" placeholder="Number of pages" required/>
 
         <br />
         <br />
 
         <label htmlFor="rating">Rating: </label> 
-        <input type="number" id="rating" name="rating" min="1" max="5" />
+        <input type="number" id="rating" name="rating" min="1" max="5" required/>
 
         <br />
         <br />
 
         <label htmlFor="synopsis">Synopsis: </label> 
-        <textarea id="synopsis" name="synopsis" placeholder="Synopsis"></textarea>
+        <textarea id="synopsis" name="synopsis" placeholder="Synopsis" required></textarea>
 
         <br />
         <br />

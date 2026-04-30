@@ -1,18 +1,41 @@
+import { useState, useEffect } from 'react';
+import booksData from "../data/books.js"
+
 function Update() {
+  const id = 1;
+    
+  const [book, setBook] = useState({});
+
+  useEffect(() => {
+    const findBook = booksData.find((b) => b.id === id);
+    setBook(findBook);
+  }, []);
+
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    
+    console.log("yay handleSubmit ran!");
+    console.log(e.target.firstname.value);
+    console.log(e.target.lastname.value);
+    console.log(e.target.username.value);
+    console.log(e.target.password.value);
+  }
+
   return (
     <>
         <div>Update</div>
         <main>
     
   <h1>UPDATE COMIC</h1>
-  <form>
+  <form onSubmit={handleSubmit}>
     <label htmlFor="title">Title: </label>
     <input
       type="text"
       id="title"
       name="title"
       defaultValue="title value stored in the database"
-    />
+    required/>
     <br />
     <br />
     <label htmlFor="author">Author: </label>
@@ -21,7 +44,7 @@ function Update() {
       id="author"
       name="author"
       defaultValue="author value stored in the database"
-    />
+    required/>
     <br />
     <br />
     <label htmlFor="publisher">Publisher: </label>
@@ -47,7 +70,7 @@ function Update() {
       id="genre"
       name="genre"
       defaultValue="genre data stored in the database"
-    />
+    required/>
     <br />
     <br />
     <label htmlFor="numberOfPages">Number of pages: </label>
@@ -56,7 +79,7 @@ function Update() {
       id="numberOfPages"
       name="numberOfPages"
       defaultValue={255}
-    />
+    required/>
     <br />
     <br />
     <label htmlFor="rating">Rating: </label>
@@ -67,7 +90,7 @@ function Update() {
       min={1}
       max={5}
       defaultValue={5}
-    />
+    required/>
     <br />
     <br />
     <label htmlFor="synopsis">Synopsis: </label>
@@ -80,7 +103,7 @@ function Update() {
     <br />
     <br />
     <br />
-    <input type="submit" defaultValue="Submit" />
+    <input type="submit" defaultValue="Submit" required/>
   </form>
   <br />
 
